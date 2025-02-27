@@ -1,0 +1,34 @@
+Consignes TP 04
+
+Cette séance a pour but le développement d'une application permettant de produire
+ la meilleure solution en réponse à un petit jeu de logique.
+Pour découvrir le jeu, passez les 3 premiers niveaux au bout du lien :
+ http://www.jeuxclic.com/jeux.php?id=15917
+Inutile de lire les règles du jeu. Il est très intuitif et les 4 touches fléchées
+ de votre clavier suffisent.
+Méfiez-vous ! Le jeu est addictif. N'oubliez pas de revenir au TP.
+
+Si on avance dans le jeu, de nombreux gadgets supplémentaires apparaissent. Nous
+ ne nous y intéresserons pas et nous limiterons au mécanisme de base :
+- un plateau de jeu ;
+- une position de départ ;
+- une position d'arrivée.
+Pour trouver la solution, i.e. une suite de mouvements (haut, bas, droite, gauche),
+ nous construirons (de manière implicite) l'arbre de toutes les suites de
+ mouvements possibles.
+Mais un tel arbre peut être très grand, selon la taille du terrain (voire infini).
+ Il faut donc tester ses noeuds en réalisant un parcours en largeur de l'arbre.
+ Cela permet de tester les suites de mouvements de taille 1, puis 2, puis 3, ...
+ jusqu'à atteindre la position d'arrivée.
+
+- Dans le répertoire src/test/scala, créé lors de la première séance, décompresser
+ tp04tests.zip.
+- Dans le répertoire src/main/scala, créé lors de la première séance, décompresser
+ tp04sources.zip.
+- Compléter les deux fichiers sources en suivant les indications données en
+ commentaires.
+
+Profitez aussi de l'occasion pour consulter les tests où un élégant mécanisme de
+ "parsing" permet de générer des plateaux de jeu à partir d'une simple description
+ textuelle. Vous pouvez décrire votre propre plateau de jeu et lancer la recherche
+ de solution quand vous en aurez terminé le codage.
