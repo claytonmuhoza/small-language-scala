@@ -18,7 +18,6 @@ class Interpretor {
    */
   def interpret(reader: Reader[Char]): Unit = ???
 }
-
 object Main {
   def main(args: Array[String]) = {
     val reader = StreamReader(new FileReader("src/test/scala/tp05/examples.txt"))
