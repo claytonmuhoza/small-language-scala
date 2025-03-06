@@ -1,0 +1,32 @@
+Consignes TP 06
+
+Pour cette séance, nous développons l'interpréteur associé au noyau de notre langage
+ fonctionnel. Sa syntaxe est restreinte au lambda-calcul pur + la construction "val"
+ de scala, pour pouvoir nommer les termes et les réutiliser.
+Vous aurez principalement besoin des transparents 46 et 64 du cours.
+
+- Dans le répertoire src/test/scala, créé lors de la première séance, décompresser
+ tp06tests.zip.
+- Dans le répertoire src/main/scala, créé lors de la première séance, décompresser
+ tp06sources.zip.
+- Compléter les cinq fichiers sources (pas "Formatter") en suivant les indications
+ ci-après et les commentaires fournis dans les fichiers.
+
+On retrouve la même architecture que pour le TP 05.
+Les nouveautés sont :
+- Le fichier "Formatter", gracieusement fourni, qui permet de mettre en forme un terme
+ (avec indentation) avant de l'afficher. La syntaxe utilisée dans ce fichier contraint
+ les identificateurs que vous devez définir dans le fichier "Types".
+- L'analyseur syntaxique est un peu plus complexe à cause de la possibilité offerte par
+ le langage d'appliquer des termes les uns aux autres en cascade sans mettre de
+ parenthèses. Des indications sont fournies dans le fichier "Parser".
+- L'"Interpretor" est aussi un peu plus complexe. D'une part il convient de tester si un 
+ terme est clos (méthode à développer dans "Util") avant d'envisager de l'évaluer,
+ d'autre part l'instruction "val" oblige à maintenir une liste de termes nommés. Les
+ noms ainsi mémorisés doivent être remplacés par les termes leur correspondant s'ils
+ apparaissent dans le prochain terme à traiter avant de tester si ce dernier est clos. 
+
+Comme précédemment, en plus des fichiers de tests unitaires, un fichier d'exemples et un
+ autre fichier indiquant les résultats attendus vous sont fournis pour tester votre
+ interpréteur.
+
