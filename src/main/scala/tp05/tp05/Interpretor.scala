@@ -16,7 +16,16 @@ class Interpretor {
    * Un message d'erreur est produit en cas d'erreur syntaxique repérée par le
    *  parser.
    */
-  def interpret(reader: Reader[Char]): Unit = ???
+  def interpret(reader: Reader[Char]): Unit  = {
+    parser.parseAll(parser.term, reader) match {
+      case parser.Success(term, _) =>
+        println(evaluator.evaluate(term))
+      case parser.Failure(msg, _) =>
+        println("Erreur de syntaxe: " + msg)
+      case parser.Error(msg, _) =>
+        println("Erreur: " + msg)
+    }
+  }
 }
 object Main {
   def main(args: Array[String]) = {
